@@ -1,0 +1,71 @@
+User-agent: *
+
+Allow: *.js
+Allow: *.css
+
+User-agent: Googlebot
+Allow:/*
+
+User-agent: Bingbot
+Allow:/*
+
+User-agent: DuckDuckbot
+Allow:/*
+
+User-Agent: slurp
+Allow:/*
+
+User-Agent: PetalBot
+Disallow: /*
+
+User-Agent: AspiegelBot
+Disallow: /*
+
+User-Agent: MauiBot
+Disallow: /*
+
+User-Agent: Baiduspider
+Disallow: /*
+
+User-Agent: YandexBot
+Disallow: /*
+
+User-Agent: DotBot
+Disallow: /*
+
+User-Agent: Exabot
+Disallow: /*
+
+User-Agent: Gigabot
+Disallow: /*
+
+User-Agent: ICCrawler
+Disallow: /*
+
+User-Agent: Snappy
+Disallow: /*
+
+User-Agent:Yeti
+Disallow: /*
+
+User-Agent: Mb2345Browser
+Disallow: /*
+
+User-Agent: QQBrowser
+Disallow: /*
+
+User-Agent: LieBaoFast
+Disallow: /*
+
+User-Agent: MicroMessenger
+Disallow: /*
+
+User-Agent: Kinza
+Disallow: /*
+
+
+User-Agent: TheWorld
+Disallow: /*
+
+User-Agent: YoudaoBot
+Disallow: /*
