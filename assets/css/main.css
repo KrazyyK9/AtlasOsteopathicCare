@@ -2607,7 +2607,7 @@ ul.labeled-icons {
 		}
 	}
 
-	#banner {
+	/* #banner {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
 		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../css/images/office.jpg");
@@ -2618,7 +2618,33 @@ ul.labeled-icons {
 		cursor: default;
 		padding: 6em 0;
 		text-align: center;
-	}
+	} */
+
+		#banner {
+		    position: relative;
+		    width: 100%;
+		    height: 100vh; /* full viewport height */
+		    overflow: hidden;
+		    text-align: center;
+		    color: white;
+		}
+
+		#bgVideo {
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    object-fit: cover;
+		    z-index: -100; /* Moved far behind the UI */
+		}
+		
+		.inner {
+		    position: relative;
+		    z-index: 1;
+		    top: 50%;
+		    transform: translateY(-50%);
+		}
 
 		#banner .inner {
 			-moz-animation: reveal-banner 1s 0.25s ease-in-out;
@@ -2635,6 +2661,8 @@ ul.labeled-icons {
 			opacity: 0;
 			padding: 3em;
 			text-align: center;
+			position: relative;
+    		z-index: 10; /* ensures it's above the video */
 		}
 
 			#banner .inner header {
@@ -3153,14 +3181,27 @@ ul.labeled-icons {
 			}
 
 				#navPanel .link {
-					border: 0;
+					/* border: 0;
 					border-top: solid 1px rgba(255, 255, 255, 0.05);
 					color: inherit;
 					display: block;
 					height: 3em;
 					line-height: 3em;
 					opacity: 0.75;
-					text-decoration: none;
+					text-decoration: none; */
+					    border: 0;
+    					border-top: solid 1px rgba(255, 255, 255, 0.05);
+    					color: inherit;
+    					display: block;
+    					opacity: 0.85;
+    					text-decoration: none;
+									
+    					/* FIXES */
+    					height: auto;          /* allow link to grow with text */
+    					line-height: 1.3em;    /* normal readable spacing */
+    					padding: 0.8em 1.2em;  /* adds breathing room */
+    					font-size: 0.9em;      /* slight size reduction */
+    					word-wrap: break-word; /* prevents overflow */
 				}
 
 					#navPanel .link.depth-0 {
@@ -3173,27 +3214,27 @@ ul.labeled-icons {
 
 				#navPanel .indent-1 {
 					display: inline-block;
-					width: 1em;
+					width: 0;
 				}
 
 				#navPanel .indent-2 {
 					display: inline-block;
-					width: 2em;
+					width: 0;
 				}
 
 				#navPanel .indent-3 {
 					display: inline-block;
-					width: 3em;
+					width: 0;
 				}
 
 				#navPanel .indent-4 {
 					display: inline-block;
-					width: 4em;
+					width: 0;
 				}
 
 				#navPanel .indent-5 {
 					display: inline-block;
-					width: 5em;
+					width: 0;
 				}
 
 			body.navPanel-visible #page-wrapper {
@@ -3357,9 +3398,9 @@ ul.labeled-icons {
 			}
 
 				#banner .inner {
-					background: none;
+					background: rgba(52, 27, 43, 0.5);
 					display: block;
-					padding: 0 1.5em;
+					padding: 1em 1.5em;
 				}
 
 					#banner .inner header h2 {
