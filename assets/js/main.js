@@ -94,27 +94,3 @@
 		}
 
 })(jQuery);
-
-const videos = [
-    'assets/videos/1.mp4',
-    'assets/videos/2.mp4',
-    'assets/videos/3.mp4',
-    'assets/videos/4.mp4',
-    'assets/videos/5.mp4',
-    'assets/videos/6.mp4',
-    'assets/videos/7.mp4'
-];
-
-let current = 0;
-const videoElement = document.getElementById('bgVideo');
-
-function playNextVideo() {
-    videoElement.src = videos[current];
-    videoElement.play().catch(() => console.warn('Autoplay blocked'));
-    current = (current + 1) % videos.length; // loop back after last video
-}
-
-videoElement.addEventListener('ended', playNextVideo);
-
-// Start first video
-playNextVideo();
