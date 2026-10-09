@@ -2726,14 +2726,13 @@ ul.labeled-icons {
 	#footer {
 		background: #E8EEF4;
 		color: #7c8081;
-		padding: 1em 0em;
+		padding: 3em 0em;
 		text-align: center;
 	}
 
 		#footer .copyright {
 			font-size: 0.8em;
 			line-height: 1em;
-			margin: 0;
 		}
 
 			#footer .copyright a {
@@ -2752,33 +2751,6 @@ ul.labeled-icons {
 					padding: 0;
 					border: 0;
 				}
-
-/* Index page: sticky footer (banner fills the viewport, footer sits flush at the bottom) */
-
-	body.index #page-wrapper {
-		display: -webkit-flex;
-		display: flex;
-		-webkit-flex-direction: column;
-		flex-direction: column;
-		min-height: 100vh;
-		min-height: 100dvh;
-	}
-
-		body.index #banner {
-			display: -webkit-flex;
-			display: flex;
-			-webkit-flex: 1 0 auto;
-			flex: 1 0 auto;
-			-webkit-align-items: center;
-			align-items: center;
-			-webkit-justify-content: center;
-			justify-content: center;
-		}
-
-		body.index #footer {
-			-webkit-flex-shrink: 0;
-			flex-shrink: 0;
-		}
 
 /* Wide */
 
@@ -2858,7 +2830,7 @@ ul.labeled-icons {
 		/* Footer */
 
 			#footer {
-				padding: 1em;
+				padding: 4em;
 			}
 
 	}
@@ -3066,7 +3038,7 @@ ul.labeled-icons {
 		/* Footer */
 
 			#footer {
-				padding: 1em 1.5em;
+				padding: 4em 1.5em;
 			}
 
 		/* Nav */
@@ -3432,12 +3404,12 @@ ul.labeled-icons {
 		/* Footer */
 
 			#footer {
-				padding: 1em 1.5em;
+				padding: 3em 1.5em;
 			}
 
 				#footer .copyright li {
 					display: block;
-					margin: 0.25em 0 0 0;
+					margin: 1em 0 0 0;
 					padding: 0;
 					border: 0;
 				}
