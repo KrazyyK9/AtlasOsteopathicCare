@@ -29,6 +29,36 @@
 			body.location #main ul.details li { margin-bottom: 0.9em; }
 			body.location #main ul.details li:last-child { margin-bottom: 0; }
 			body.location #footer ul.copyright + ul.copyright { margin-top: 0.8em; }
+			/* Smooth scrolling for the "On this page" menu (skipped for visitors who prefer reduced motion) */
+			@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+			/* Two-column layout: sticky menu on the left, page sections on the right */
+			body.location #main .page-layout { display: grid; grid-template-columns: 14em minmax(0, 1fr); gap: 1.75em; max-width: 90em; margin: 0 auto; padding: 0 1.5em; align-items: start; }
+			body.location #main .page-content > section.container { width: auto; max-width: 100%; margin: 0 0 3em 0; scroll-margin-top: 5em; }
+			@media screen and (min-width: 981px) { body.location #main .page-content > section.wrapper { padding: 3.5em; } }
+
+			body.location #main .toc { position: sticky; top: 5.5em; background: #fff; border-radius: 4px; padding: 1.25em 0; }
+			body.location #main .toc .toc-title { margin: 0 1.5em 0.75em 1.5em; font-size: 0.7em; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #7c8081; line-height: 1.4em; }
+			body.location #main .toc ul { list-style: none; margin: 0; padding: 0; }
+			body.location #main .toc li { margin: 0; padding: 0; }
+			body.location #main .toc a { display: block; padding: 0.6em 1.25em 0.6em 1.25em; border-bottom: 0; border-left: 3px solid transparent; color: #555; font-size: 0.8em; line-height: 1.4em; text-decoration: none; }
+			body.location #main .toc a:hover { color: #222; background: #f3f6fa; }
+			body.location #main .toc a.is-active { color: #222; font-weight: 700; border-left-color: #83d3c9; background: #eef7f6; }
+
+			/* Tablet and phone: the menu becomes a sticky, scrollable bar just below the site's menu button strip */
+			@media screen and (max-width: 980px) {
+				/* The site hides sideways overflow with overflow-x: hidden, which turns <body> into a scroll container and breaks position: sticky.
+				   overflow-x: clip does the same job without that side effect. */
+				html, body { overflow-x: clip; }
+				body.location #main .page-layout { display: block; padding: 0; }
+				body.location #main .toc { position: sticky; top: 60px; z-index: 100; margin: 0 0 1.5em 0; padding: 0; border-radius: 0; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+				body.location #main .toc .toc-title { display: none; }
+				body.location #main .toc ul { display: flex; }
+				body.location #main .toc a { padding: 1em 1.1em; border-left: 0; border-bottom: 3px solid transparent; }
+				body.location #main .toc a.is-active { border-left-color: transparent; border-bottom-color: #83d3c9; }
+				body.location #main .page-content > section.container { scroll-margin-top: 7.5em; }
+			}
+
 			/* Main building photo: larger than the entrance photo row */
 			body.location #main img.main-photo { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto 2em auto; border-radius: 4px; }
 			/* Entrance photo row: 5 across on desktop, 3 on tablets, 2 on phones; photos are cropped to one shape so they line up */
@@ -36,7 +66,7 @@
 			body.location #main ul.photo-row li { flex: 0 0 calc((100% - 4 * 0.75em) / 5); padding: 0; margin: 0; }
 			body.location #main ul.photo-row a { display: block; border-bottom: 0; }
 			body.location #main ul.photo-row img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
-			@media screen and (max-width: 980px) { body.location #main ul.photo-row li { flex-basis: calc((100% - 2 * 0.75em) / 3); } }
+			@media screen and (max-width: 1200px) { body.location #main ul.photo-row li { flex-basis: calc((100% - 2 * 0.75em) / 3); } }
 			@media screen and (max-width: 736px) { body.location #main ul.photo-row li { flex-basis: calc((100% - 0.75em) / 2); } }
 		</style>
 
@@ -96,9 +126,23 @@
 
 			<!-- Main -->
 			<article id="main">
+				<div class="page-layout">
+
+				<!-- On this page -->
+				<nav class="toc" id="toc" aria-label="On this page">
+					<ul>
+						<li><a href="#where">Where Is Atlas Osteopathic Care?</a></li>
+						<li><a href="#parking">Parking and Getting Here by Car</a></li>
+						<li><a href="#ttc">Getting Here by TTC</a></li>
+						<li><a href="#entrance">How to Find the Entrance</a></li>
+						<li><a href="#book">Book Your Appointment today!</a></li>
+					</ul>
+				</nav>
+
+				<div class="page-content">
 
 				<!-- Where is the clinic? -->
-				<section class="wrapper style3 container special">
+				<section id="where" class="wrapper style3 container special">
 
 					<header class="major">
 						<h1>Visit Atlas Osteopathic Care in Etobicoke</h1>
@@ -126,7 +170,7 @@
 				</section>
 
 				<!-- Parking -->
-				<section class="wrapper style1 container special">
+				<section id="parking" class="wrapper style1 container special">
 
 					<header class="major">
 						<h2>Parking and Getting Here by Car</h2>
@@ -141,7 +185,7 @@
 				</section>
 
 				<!-- TTC -->
-				<section class="wrapper style3 container special">
+				<section id="ttc" class="wrapper style3 container special">
 
 					<header class="major">
 						<h2>Getting Here by TTC</h2>
@@ -163,7 +207,7 @@
 				</section>
 
 				<!-- Entrance -->
-				<section class="wrapper style1 container special">
+				<section id="entrance" class="wrapper style1 container special">
 
 					<header class="major">
 						<h2>How to Find the Entrance</h2>
@@ -192,7 +236,7 @@
 				</section>
 
 				<!-- Book -->
-				<section class="wrapper style2 container special">
+				<section id="book" class="wrapper style2 container special">
 
 					<header class="major">
 						<h2>Book Your Appointment today!</h2>
@@ -207,6 +251,9 @@
 
 				</section>
 
+				</div><!-- /.page-content -->
+
+				</div><!-- /.page-layout -->
 			</article>
 
 			<!-- Footer -->
@@ -231,6 +278,50 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- "On this page" menu: highlight the section the visitor is reading -->
+		<script>
+			(function () {
+				var nav = document.getElementById('toc');
+				if (!nav) { return; }
+				var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+				var sections = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+				var queued = false;
+
+				function update() {
+					queued = false;
+					// A section counts as "current" once its top passes this line (below the fixed header / menu bar).
+					var line = Math.round(window.innerHeight * 0.3) + 60;
+					var current = 0, i;
+					for (i = 0; i < sections.length; i++) {
+						if (sections[i] && sections[i].getBoundingClientRect().top <= line) { current = i; }
+					}
+					// At the very bottom of the page the last section is always current (it may be too short to reach the line).
+					if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 2) { current = sections.length - 1; }
+
+					links.forEach(function (a, n) {
+						var on = (n === current);
+						a.classList.toggle('is-active', on);
+						if (on) { a.setAttribute('aria-current', 'true'); } else { a.removeAttribute('aria-current'); }
+					});
+
+					// On phones the menu scrolls sideways: keep the highlighted item in view.
+					if (nav.scrollWidth > nav.clientWidth + 1) {
+						var active = links[current];
+						nav.scrollLeft = active.offsetLeft - (nav.clientWidth - active.offsetWidth) / 2;
+					}
+				}
+
+				function queueUpdate() {
+					if (!queued) { queued = true; window.requestAnimationFrame(update); }
+				}
+
+				window.addEventListener('scroll', queueUpdate, { passive: true });
+				window.addEventListener('resize', queueUpdate);
+				window.addEventListener('load', update);
+				update();
+			})();
+		</script>
 
 	</body>
 </html>
