@@ -4,34 +4,71 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 	Edited By: JP Reeves
-	Date Created: 10/02/2023
-	Date Last Modified: 10/03/2023
-	FTGOG
 -->
-<html>
+<html lang="en">
 	<head>
-		<title>Book An Appointment - Atlas Osteopathic Care</title>
+		<title>About David Corradi, M.OMSc | Atlas Osteopathic Care Etobicoke</title>
 		<meta charset="utf-8" />
-		<meta name="title" content="Osteopathic Services In Etobicoke | Atlas Osteopathic Care"/>
-		<meta name="description" content="Book an appointment with David Corradi, a registered osteopath in Etobicoke at Atlas Osteopathic Care."/>
+		<meta name="description" content="Book an appointment with David Corradi, a registered osteopath in Etobicoke at Atlas Osteopathic Care." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="canonical" href="https://aocare.ca/aboutme" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- Social sharing -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="About David Corradi, M.OMSc | Atlas Osteopathic Care Etobicoke" />
+		<meta property="og:description" content="Book an appointment with David Corradi, a registered osteopath in Etobicoke at Atlas Osteopathic Care." />
+		<meta property="og:url" content="https://aocare.ca/aboutme" />
+
+		<!-- Page-specific tweaks -->
+		<style>
+			body.about #main h1 { font-size: 2.2em; font-weight: 700; letter-spacing: 0.1em; }
+			body.about #main figure.headshot { margin: 0 auto 2em auto; max-width: 320px; }
+			body.about #main figure.headshot img { display: block; width: 100%; height: auto; border-radius: 4px; }
+			body.about #main figure.headshot figcaption { margin-top: 0.75em; font-style: italic; }
+			body.about #footer ul.copyright + ul.copyright { margin-top: 0.8em; }
+			/* Smooth scrolling for the "On this page" menu (skipped for visitors who prefer reduced motion) */
+			@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+			/* Two-column layout: sticky menu on the left, page sections on the right */
+			body.about #main .page-layout { display: grid; grid-template-columns: 14em minmax(0, 1fr); gap: 1.75em; max-width: 90em; margin: 0 auto; padding: 0 1.5em; align-items: start; }
+			body.about #main .page-content > section.container { width: auto; max-width: 100%; margin: 0 0 3em 0; scroll-margin-top: 5em; }
+			@media screen and (min-width: 981px) { body.about #main .page-content > section.wrapper { padding: 3.5em; } }
+
+			body.about #main .toc { position: sticky; top: 5.5em; background: #fff; border-radius: 4px; padding: 1.25em 0; }
+			body.about #main .toc ul { list-style: none; margin: 0; padding: 0; }
+			body.about #main .toc li { margin: 0; padding: 0; }
+			body.about #main .toc a { display: block; padding: 0.6em 1.25em 0.6em 1.25em; border-bottom: 0; border-left: 3px solid transparent; color: #555; font-size: 0.8em; line-height: 1.4em; text-decoration: none; }
+			body.about #main .toc a:hover { color: #222; background: #f3f6fa; }
+			body.about #main .toc a.is-active { color: #222; font-weight: 700; border-left-color: #83d3c9; background: #eef7f6; }
+
+			/* Tablet and phone: the menu becomes a sticky, scrollable bar just below the site's menu button strip */
+			@media screen and (max-width: 980px) {
+				/* overflow-x: clip instead of hidden so position: sticky keeps working (see location.html) */
+				html, body { overflow-x: clip; }
+				body.about #main .page-layout { display: block; padding: 0; }
+				body.about #main .toc { position: sticky; top: 60px; z-index: 100; margin: 0 0 1.5em 0; padding: 0; border-radius: 0; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+				body.about #main .toc ul { display: flex; }
+				body.about #main .toc a { padding: 1em 1.1em; border-left: 0; border-bottom: 3px solid transparent; }
+				body.about #main .toc a.is-active { border-left-color: transparent; border-bottom-color: #83d3c9; }
+				body.about #main .page-content > section.container { scroll-margin-top: 7.5em; }
+			}
+		</style>
 
 		<!-- Add the favicon -->
 		<link rel="icon" href="assets/css/images/Atlas-favicon.png" type="image/x-icon" />
 	</head>
-	<body class="left-sidebar is-preload">
+	<body class="about is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 			<header id="header">
 				<a href="index.html">
-					<img id="logo" src="/assets/css/images/Atlas-b-02.png" width="100" height="40">
-					</a>
+					<img id="logo" src="/assets/css/images/Atlas-b-02.png" width="100" height="40" alt="Atlas Osteopathic Care">
+				</a>
 				<nav id="nav">
 					<ul>
-						<!-- <li class="current"><a href="https://atlasosteopathiccare.janeapp.com">Book appointment</a></li> -->
 						<li class="current submenu">
 						</li>
 						<li class="current submenu">
@@ -55,84 +92,96 @@
 								<li><a href="officerules.html">Office Rules</a></li>
 							</ul>
 						</li>
+					</ul>
 				</nav>
 			</header>
 
-<!-- Main / Bio -->
+			<!-- Main -->
 			<article id="main">
+				<div class="page-layout">
 
-				<!-- <header class="special container"> -->
-				<header class="container">
-					<!-- <span class="icon solid fa-user"></span> -->
-					<h2 style="text-align: center; font-weight: bold; font-size: 2em;">About Me</h2>
-				</header>
+				<!-- On this page -->
+				<nav class="toc" id="toc" aria-label="On this page">
+					<ul>
+						<li><a href="#about">About Me</a></li>
+						<li><a href="#education">Education and Background</a></li>
+						<li><a href="#practice">Where I Practice</a></li>
+					</ul>
+				</nav>
 
-				<!-- One -->
-					<section class="wrapper style4 container">
+				<div class="page-content">
 
-						<div class="row gtr-150">
-							<div class="col-12-narrower">
+				<!-- About me -->
+				<section id="about" class="wrapper style3 container special">
 
-								<!-- Content -->
-									<div class="content">
-										<section>
-											<a href="#" class="image featured about-me"><img src="assets/css/images/david-headshot.JPG" alt="Headshot of David Corradi" /><p style="font-style: italic;">David Corradi, M.OMSc</p></a>
-											<header>
-												<!-- <h3><strong>Post Education</strong></h3> -->
-											</header>
-											<p>I completed my Bachelor of Science (Honors) at Queen's university in 2018. After University, I worked as a Personal Trainer where I found my passion for helping people improve all aspects of their lives. Leaning towards guiding patients through the rehabilitation process, I knew I wanted to pursue a career beyond training.</p>
-											<p>In the Fall of 2020 I started at the Canadian Academy of Osteopathy (CAO) in Hamilton, Ontario. This four-year program has provided me with the knowledge and building blocks to understand the human body through the osteopathic lens.  I graduated in the Fall of 2023 earning my Masters in Practice in Osteopathic Manipulative Sciences (M. OMSc).</p>
-											<p>I currently practice Osteopathy in Toronto, Ontario.</p>
-										</section>
-									</div>
+					<header class="major">
+						<h1>About Me</h1>
+					</header>
 
-							</div>
-							<div class="col-4 col-12-narrower">
+					<figure class="headshot">
+						<img src="assets/css/images/david-headshot.JPG" alt="Headshot of David Corradi" />
+						<figcaption>David Corradi, M.OMSc</figcaption>
+					</figure>
 
-								<!-- Sidebar -->
-									<!-- <div class="sidebar">
-										<section>
-											<header>
-												<h3><strong>Background</strong></h3>
-											</header>
-											<p>I strives to make my health a priority. With a history of competing in a number of sports such as hockey, soccer, and Olympic weightlifting, I understand what is required for taking care of your body. Osteopathic treatment has helped me combat injuries and has allowed me to continue doing what I love, moving pain free.</p>
-											<a href="#" class="image featured"><img src="assets/css/images/david-lifting.jpg" alt="David power lifting weight above his head" /></a>
-										</section> -->
-										<!-- <section>
-											<div class="col-4 col-12-small">
-												<ul class="labeled-icons">
-													<li>
-														<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-														<a href="https://www.google.com/maps/place/160+The+Westway,+Etobicoke,+ON+M9P+2C1/@43.6891451,-79.5449594,17z/data=!3m1!4b1!4m6!3m5!1s0x882b374b947f8d71:0x3a7e9b743f059283!8m2!3d43.6891412!4d-79.5423845!16s%2Fg%2F11bw4by89y?entry=ttu">160 The Westway</a><br>
-														Suite 14<br>
-														Etobicoke<br>
-														ON M9P 2C1
-													</li>
-													<li> 
-														<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-														647-927-7080
-													</li>
-													<li>
-														<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-														<a href="mailto:omt@aocare.ca?subject=I'm looking for treatment!">omt@aocare.ca</a>
-													</li>
-												</ul>
-											</div>
-										</section> -->
-									</div>
+				</section>
 
-							</div>
-						</div>
-					</section>
+				<!-- Education and background -->
+				<section id="education" class="wrapper style1 container special">
 
+					<header class="major">
+						<h2>Education and Background</h2>
+					</header>
+					<p>I completed my Bachelor of Science (Honors) at Queen's university in 2018. After University, I worked as a Personal Trainer where I found my passion for helping people improve all aspects of their lives. Leaning towards guiding patients through the rehabilitation process, I knew I wanted to pursue a career beyond training.</p>
+					<p>In the Fall of 2020 I started at the Canadian Academy of Osteopathy (CAO) in Hamilton, Ontario. This four-year program has provided me with the knowledge and building blocks to understand the human body through the osteopathic lens. I graduated in the Fall of 2023 earning my Masters in Practice in Osteopathic Manipulative Sciences (M. OMSc).</p>
+
+					<ul class="buttons">
+						<li><a href="FAQ.html" class="button primary">What Is Osteopathy?</a></li>
+					</ul>
+
+				</section>
+
+				<!-- Background (hidden for now; remove the comment markers to show it)
+				<section id="background" class="wrapper style3 container special">
+
+					<header class="major">
+						<h2>Background</h2>
+					</header>
+					<p>I strives to make my health a priority. With a history of competing in a number of sports such as hockey, soccer, and Olympic weightlifting, I understand what is required for taking care of your body. Osteopathic treatment has helped me combat injuries and has allowed me to continue doing what I love, moving pain free.</p>
+					<img src="assets/css/images/david-lifting.jpg" alt="David power lifting weight above his head" />
+
+				</section>
+				-->
+
+				<!-- Where I practice -->
+				<section id="practice" class="wrapper style2 container special">
+
+					<header class="major">
+						<h2>Where I Practice</h2>
+					</header>
+					<p>I currently practice Osteopathy in Toronto, Ontario.</p>
+
+					<ul class="buttons">
+						<li><a href="services.html" class="button primary">Book an Appointment</a></li>
+						<li><a href="https://atlasosteopathiccare.janeapp.com/#/staff_member/1/treatment/4" class="button">Free Consultation</a></li>
+						<li><a href="location.html" class="button">Location</a></li>
+					</ul>
+
+				</section>
+
+				</div><!-- /.page-content -->
+
+				</div><!-- /.page-layout -->
 			</article>
 
-					<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy; Atlas Osteopathic Care</li><li>Design: <a href="#">HTML5 UP</a></li><li>Built By: <a href="https://jpreeves.netlify.app/">JP Reeves</a></li>
-						</ul>
-					</footer>
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+					<li>Phone: <a href="tel:+16479277080">647-927-7080</a></li><li>Email: <a href="mailto:omt@aocare.ca">omt@aocare.ca</a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Atlas Osteopathic Care</li><li>Design: <a href="#">HTML5 UP</a></li><li>Built By: <a href="https://jpreeves.netlify.app/">JP Reeves</a></li>
+				</ul>
+			</footer>
 
 		</div>
 
@@ -146,6 +195,50 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- "On this page" menu: highlight the section the visitor is reading -->
+		<script>
+			(function () {
+				var nav = document.getElementById('toc');
+				if (!nav) { return; }
+				var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+				var sections = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+				var queued = false;
+
+				function update() {
+					queued = false;
+					// A section counts as "current" once its top passes this line (below the fixed header / menu bar).
+					var line = Math.round(window.innerHeight * 0.3) + 60;
+					var current = 0, i;
+					for (i = 0; i < sections.length; i++) {
+						if (sections[i] && sections[i].getBoundingClientRect().top <= line) { current = i; }
+					}
+					// At the very bottom of the page the last section is always current (it may be too short to reach the line).
+					if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 2) { current = sections.length - 1; }
+
+					links.forEach(function (a, n) {
+						var on = (n === current);
+						a.classList.toggle('is-active', on);
+						if (on) { a.setAttribute('aria-current', 'true'); } else { a.removeAttribute('aria-current'); }
+					});
+
+					// On phones the menu scrolls sideways: keep the highlighted item in view.
+					if (nav.scrollWidth > nav.clientWidth + 1) {
+						var active = links[current];
+						nav.scrollLeft = active.offsetLeft - (nav.clientWidth - active.offsetWidth) / 2;
+					}
+				}
+
+				function queueUpdate() {
+					if (!queued) { queued = true; window.requestAnimationFrame(update); }
+				}
+
+				window.addEventListener('scroll', queueUpdate, { passive: true });
+				window.addEventListener('resize', queueUpdate);
+				window.addEventListener('load', update);
+				update();
+			})();
+		</script>
 
 	</body>
 </html>
