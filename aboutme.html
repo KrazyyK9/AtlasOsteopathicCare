@@ -24,10 +24,18 @@
 		<!-- Page-specific tweaks -->
 		<style>
 			body.about #main h1 { font-size: 2.2em; font-weight: 700; letter-spacing: 0.1em; }
-			body.about #main figure.headshot { margin: 0 auto 2em auto; max-width: 320px; }
+			/* Photo on the left, Education and Background on the right; stacks on phones */
+			body.about #main .bio { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 2.5em; align-items: start; margin-bottom: 2em; }
+			body.about #main .bio-text { text-align: left; }
+			body.about #main figure.headshot { margin: 0; }
 			body.about #main #education { scroll-margin-top: 5em; }
 			body.about #main figure.headshot img { display: block; width: 100%; height: auto; border-radius: 4px; }
-			body.about #main figure.headshot figcaption { margin-top: 0.75em; font-style: italic; }
+			body.about #main figure.headshot figcaption { margin-top: 0.75em; font-style: italic; text-align: center; }
+			@media screen and (max-width: 736px) {
+				body.about #main .bio { grid-template-columns: minmax(0, 1fr); gap: 1.5em; }
+				body.about #main figure.headshot { max-width: 300px; margin: 0 auto; }
+				body.about #main .bio-text { text-align: center; }
+			}
 			body.about #footer ul.copyright + ul.copyright { margin-top: 0.8em; }
 			/* Smooth scrolling for the "On this page" menu (skipped for visitors who prefer reduced motion) */
 			@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
@@ -119,17 +127,23 @@
 						<h1>About Me</h1>
 					</header>
 
-					<figure class="headshot">
-						<img src="assets/css/images/david-headshot.JPG" alt="Headshot of David Corradi" />
-						<figcaption>David Corradi, M.OMSc</figcaption>
-					</figure>
+					<div class="bio">
 
-					<!-- Education and background (same section as the photo so the heading sits close beneath it) -->
-					<header id="education" class="major">
-						<h2>Education and Background</h2>
-					</header>
-					<p>I completed my Bachelor of Science (Honors) at Queen's university in 2018. After University, I worked as a Personal Trainer where I found my passion for helping people improve all aspects of their lives. Leaning towards guiding patients through the rehabilitation process, I knew I wanted to pursue a career beyond training.</p>
-					<p>In the Fall of 2020 I started at the Canadian Academy of Osteopathy (CAO) in Hamilton, Ontario. This four-year program has provided me with the knowledge and building blocks to understand the human body through the osteopathic lens. I graduated in the Fall of 2023 earning my Masters in Practice in Osteopathic Manipulative Sciences (M. OMSc).</p>
+						<figure class="headshot">
+							<img src="assets/css/images/david-headshot.JPG" alt="Headshot of David Corradi" />
+							<figcaption>David Corradi, M.OMSc</figcaption>
+						</figure>
+
+						<!-- Education and background -->
+						<div class="bio-text">
+							<header id="education" class="major">
+								<h2>Education and Background</h2>
+							</header>
+							<p>I completed my Bachelor of Science (Honors) at Queen's university in 2018. After University, I worked as a Personal Trainer where I found my passion for helping people improve all aspects of their lives. Leaning towards guiding patients through the rehabilitation process, I knew I wanted to pursue a career beyond training.</p>
+							<p>In the Fall of 2020 I started at the Canadian Academy of Osteopathy (CAO) in Hamilton, Ontario. This four-year program has provided me with the knowledge and building blocks to understand the human body through the osteopathic lens. I graduated in the Fall of 2023 earning my Masters in Practice in Osteopathic Manipulative Sciences (M. OMSc).</p>
+						</div>
+
+					</div>
 
 					<ul class="buttons">
 						<li><a href="FAQ.html" class="button primary">What Is Osteopathy?</a></li>
