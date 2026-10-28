@@ -18,6 +18,13 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+		<!-- Page-specific tweaks: each booking button sits under its own description, lined up at the bottom of both columns -->
+		<style>
+			#main .row > .col-6 { display: flex; flex-direction: column; }
+			#main .row > .col-6 > section { flex: 1; display: flex; flex-direction: column; }
+			#main .row > .col-6 > section > ul.buttons { margin-top: auto; margin-bottom: 0; }
+		</style>
+
 		<!-- Add the favicon -->
 		<link rel="icon" href="assets/css/images/Atlas-favicon.png" type="image/x-icon" />
 	</head>
@@ -71,6 +78,9 @@
 											answer any questions they may have. This appointment includes an assessment and treatment portion.
 											The appointment time is scheduled for 45 (forty-five) minutes; however appointments may conclude
 											before the 45-minute mark.</p>
+										<ul class="buttons">
+											<li><a href="https://atlasosteopathiccare.janeapp.com/#/staff_member/1/treatment/1" class="button primary">Initial Osteopathy Appointment</a></li>
+										</ul>
 									</section>
 	
 								</div>
@@ -84,16 +94,19 @@
 										<p>This appointment is designed for the OMT to continue working with the patient with the focus being on
 											assessment and treatment. The appointment time is scheduled for 30 (thirty) minutes; however
 											appointments may conclude before the 30-minute mark.</p>
+										<ul class="buttons">
+											<li><a href="https://atlasosteopathiccare.janeapp.com/#/staff_member/1/treatment/2" class="button">Follow-up Osteopathy Appointment</a></li>
+										</ul>
 									</section>
-									
-								</div>	
+
+								</div>
 								<div class="col-12-narrower">
-	
+
 									<section>
 										<a href="#" class="image featured"><img src="assets/css/images/services-photo.jpg" alt="" /></a>
 									</section>
-									
-								</div>					
+
+								</div>
 							</div>
 						</section>
 	
