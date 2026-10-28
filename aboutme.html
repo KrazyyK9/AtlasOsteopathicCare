@@ -25,8 +25,9 @@
 		<style>
 			body.about #main h1 { font-size: 2.2em; font-weight: 700; letter-spacing: 0.1em; }
 			/* Photo on the left, Education and Background on the right; stacks on phones */
-			body.about #main .bio { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 2.5em; align-items: start; margin-bottom: 2em; }
+			body.about #main .bio { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 2.5em; align-items: center; margin-bottom: 2em; }
 			body.about #main .bio-text { text-align: left; }
+			body.about #main .bio-text p:last-child { margin-bottom: 0; }
 			body.about #main figure.headshot { margin: 0; }
 			body.about #main #education { scroll-margin-top: 5em; }
 			body.about #main figure.headshot img { display: block; width: 100%; height: auto; border-radius: 4px; }
@@ -127,6 +128,11 @@
 						<h1>About Me</h1>
 					</header>
 
+					<!-- Education and background: heading spans both columns so the photo lines up with the text -->
+					<header id="education" class="major">
+						<h2>Education and Background</h2>
+					</header>
+
 					<div class="bio">
 
 						<figure class="headshot">
@@ -134,11 +140,7 @@
 							<figcaption>David Corradi, M.OMSc</figcaption>
 						</figure>
 
-						<!-- Education and background -->
 						<div class="bio-text">
-							<header id="education" class="major">
-								<h2>Education and Background</h2>
-							</header>
 							<p>I completed my Bachelor of Science (Honors) at Queen's university in 2018. After University, I worked as a Personal Trainer where I found my passion for helping people improve all aspects of their lives. Leaning towards guiding patients through the rehabilitation process, I knew I wanted to pursue a career beyond training.</p>
 							<p>In the Fall of 2020 I started at the Canadian Academy of Osteopathy (CAO) in Hamilton, Ontario. This four-year program has provided me with the knowledge and building blocks to understand the human body through the osteopathic lens. I graduated in the Fall of 2023 earning my Masters in Practice in Osteopathic Manipulative Sciences (M. OMSc).</p>
 						</div>
