@@ -6,8 +6,8 @@
 
 	- First visit: follows the visitor's device setting (prefers-color-scheme).
 	- After the visitor uses the toggle, their choice is remembered.
-	- Adds a toggle button to the top menu (desktop) and a floating one beside
-	  the menu button (tablet / phone, where the top menu is hidden).
+	- Adds an on/off switch to the top menu (desktop) and a floating one at the
+	  top right (tablet / phone, where the top menu is hidden).
 */
 
 (function () {
@@ -36,13 +36,11 @@
 
 	function updateButtons(theme) {
 		var isDark = theme === 'dark',
-			label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+			title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
 
 		for (var i = 0; i < buttons.length; i++) {
-			buttons[i].innerHTML = isDark ? ICON_SUN : ICON_MOON;
-			buttons[i].setAttribute('aria-label', label);
-			buttons[i].setAttribute('title', label);
-			buttons[i].setAttribute('aria-pressed', isDark ? 'true' : 'false');
+			buttons[i].setAttribute('aria-checked', isDark ? 'true' : 'false');
+			buttons[i].setAttribute('title', title);
 		}
 	}
 
@@ -58,10 +56,21 @@
 		apply(next);
 	}
 
+	// A switch like the ones in Apple's Settings: a track with a sliding knob.
+	// The knob shows a sun in light mode and a moon in dark mode.
 	function makeButton(className) {
 		var button = document.createElement('button');
 		button.type = 'button';
 		button.className = 'theme-toggle ' + className;
+		button.setAttribute('role', 'switch');
+		button.setAttribute('aria-label', 'Dark mode');
+		button.innerHTML =
+			'<span class="theme-toggle-track" aria-hidden="true">' +
+				'<span class="theme-toggle-knob">' +
+					'<span class="theme-toggle-icon theme-toggle-sun">' + ICON_SUN + '</span>' +
+					'<span class="theme-toggle-icon theme-toggle-moon">' + ICON_MOON + '</span>' +
+				'</span>' +
+			'</span>';
 		button.addEventListener('click', toggle);
 		buttons.push(button);
 		return button;

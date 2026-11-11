@@ -3839,81 +3839,6 @@ ul.labeled-icons {
 	}
 
 /* ==========================================================================
-   Theme toggle button (added by assets/js/theme.js)
-   ========================================================================== */
-
-	#header nav ul li.theme-toggle-item {
-		margin-left: 1em;
-		vertical-align: middle;
-	}
-
-	button.theme-toggle,
-	#header nav ul li button.theme-toggle {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 2.4em;
-		min-width: 0;
-		height: 2.4em;
-		padding: 0;
-		margin: 0;
-		border: solid 1px rgba(124, 128, 129, 0.35);
-		border-radius: 50%;
-		background: transparent;
-		box-shadow: none;
-		color: inherit;
-		font-size: 1em;
-		line-height: 1;
-		letter-spacing: 0;
-		cursor: pointer;
-		transform: none;
-	}
-
-		button.theme-toggle:hover,
-		#header nav ul li button.theme-toggle:hover {
-			background: rgba(188, 202, 206, 0.2);
-			border-color: currentColor;
-			transform: none;
-		}
-
-		button.theme-toggle svg {
-			display: block;
-		}
-
-	#header.alt nav ul li button.theme-toggle {
-		border-color: rgba(255, 255, 255, 0.6);
-	}
-
-	/* Floating version: only where the top menu is hidden (tablet / phone) */
-	button.theme-toggle-floating {
-		display: none;
-	}
-
-	@media screen and (max-width: 980px) {
-		button.theme-toggle.theme-toggle-floating {
-			display: inline-flex;
-			position: fixed;
-			top: 10px;
-			right: 10px;
-			z-index: 10001;
-			width: 40px;
-			height: 40px;
-			font-size: 16px;
-			background: rgba(246, 242, 234, 0.92);
-			border-color: rgba(38, 41, 43, 0.12);
-			color: #35383a;
-			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-			-webkit-backdrop-filter: blur(8px);
-			backdrop-filter: blur(8px);
-		}
-
-		body.navPanel-visible button.theme-toggle-floating {
-			opacity: 0;
-			pointer-events: none;
-		}
-	}
-
-/* ==========================================================================
    Dark mode (html[data-theme="dark"], set by assets/js/theme.js)
    Same warm character as the light palette, just dimmed.
    ========================================================================== */
@@ -4048,12 +3973,6 @@ ul.labeled-icons {
 			border-left-color: transparent;
 			border-bottom-color: var(--atlas-link);
 		}
-
-		html[data-theme="dark"] button.theme-toggle.theme-toggle-floating {
-			background: rgba(36, 35, 31, 0.92);
-			border-color: rgba(255, 255, 255, 0.12);
-			color: var(--atlas-ink);
-		}
 	}
 
 	/* Footer */
@@ -4082,4 +4001,150 @@ ul.labeled-icons {
 	html[data-theme="dark"] h2 a,
 	html[data-theme="dark"] h3 a {
 		color: inherit;
+	}
+
+/* ==========================================================================
+   Light / dark switch (added by assets/js/theme.js)
+   Styled like an Apple Settings switch: a pill track with a sliding knob.
+   Off (light mode): warm grey track, sun on the knob.
+   On (dark mode): teal track, knob slides right, moon on the knob.
+   ========================================================================== */
+
+	button.theme-toggle,
+	#header nav ul li button.theme-toggle {
+		display: inline-flex;
+		align-items: center;
+		width: auto;
+		min-width: 0;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		border-radius: 999px;
+		background: none;
+		box-shadow: none;
+		color: inherit;
+		font-size: 16px;
+		line-height: 0;
+		letter-spacing: 0;
+		vertical-align: middle;
+		cursor: pointer;
+		transform: none;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+		button.theme-toggle:hover,
+		#header nav ul li button.theme-toggle:hover {
+			background: none;
+			transform: none;
+		}
+
+	.theme-toggle-track {
+		position: relative;
+		display: block;
+		width: 50px;
+		height: 30px;
+		border-radius: 999px;
+		background: #d6d0c5;
+		box-shadow: inset 0 0 0 1px rgba(38, 41, 43, 0.08);
+		transition: background-color 0.25s ease;
+	}
+
+		button.theme-toggle:hover .theme-toggle-track {
+			background: #ccc5b8;
+		}
+
+	.theme-toggle-knob {
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		width: 26px;
+		height: 26px;
+		border-radius: 50%;
+		background: #fff;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
+		transition: transform 0.28s cubic-bezier(0.3, 1.3, 0.5, 1);
+	}
+
+	.theme-toggle-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 14px;
+		height: 14px;
+		margin: -7px 0 0 -7px;
+		transition: opacity 0.2s ease;
+	}
+
+		.theme-toggle-icon svg {
+			display: block;
+			width: 14px;
+			height: 14px;
+		}
+
+	.theme-toggle-sun { color: #e0a21b; opacity: 1; }
+	.theme-toggle-moon { color: #2b8f83; opacity: 0; }
+
+	/* On: dark mode */
+	button.theme-toggle[aria-checked="true"] .theme-toggle-track,
+	button.theme-toggle[aria-checked="true"]:hover .theme-toggle-track {
+		background: var(--atlas-teal-deep);
+		box-shadow: none;
+	}
+
+	button.theme-toggle[aria-checked="true"] .theme-toggle-knob {
+		transform: translateX(20px);
+	}
+
+	button.theme-toggle[aria-checked="true"] .theme-toggle-sun { opacity: 0; }
+	button.theme-toggle[aria-checked="true"] .theme-toggle-moon { opacity: 1; }
+
+	/* Keyboard focus ring around the track */
+	button.theme-toggle:focus-visible {
+		outline: 3px solid var(--atlas-teal);
+		outline-offset: 3px;
+	}
+
+	/* In the desktop top menu */
+	#header nav ul li.theme-toggle-item {
+		margin-left: 1.25em;
+		vertical-align: middle;
+	}
+
+	/* Over the home page photo, before the header turns solid */
+	#header.alt button.theme-toggle[aria-checked="false"] .theme-toggle-track {
+		background: rgba(255, 255, 255, 0.35);
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+	}
+
+	/* Floating version: only where the top menu is hidden (tablet / phone) */
+	button.theme-toggle.theme-toggle-floating {
+		display: none;
+	}
+
+	@media screen and (max-width: 980px) {
+		button.theme-toggle.theme-toggle-floating {
+			display: inline-flex;
+			position: fixed;
+			top: 15px;
+			right: 12px;
+			z-index: 10001;
+		}
+
+			button.theme-toggle-floating .theme-toggle-track {
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18), inset 0 0 0 1px rgba(38, 41, 43, 0.08);
+			}
+
+		body.navPanel-visible button.theme-toggle-floating {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.theme-toggle-track,
+		.theme-toggle-knob,
+		.theme-toggle-icon {
+			transition: none;
+		}
 	}
